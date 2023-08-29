@@ -4,6 +4,7 @@ import AnimeCard from './anime_card';
 import { AnimeTable } from './anime_table';
 
 const DEFAULT_USERNAME = 'centricmax';
+const SEARCH_TIMEOUT = 200;
 
 const SearchTypes = {
   Anime: 'anime',
@@ -19,23 +20,33 @@ export default function Home() {
   const [result, setResult] = useState([]);
   const [watchListResult, setWatchListResult] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
+  const [searchTimeout, setSearchTimeout] = useState(null);
 
-  const handleSearch = async () => {
-    try {
-      if (searchType === SearchTypes.WatchList) return;
-
-      if (searchInput.length <= 4) {
-        setResult([]);
-        return;
-      }
-
-      const response = await axios.post(`${apiUrl}/search/${searchType}`, { search: searchInput });
-      if (response.data && Array.isArray(response.data)) {
-        setResult(response.data);
-      }
-    } catch (error) {
-      console.error('Error searching:', error);
+  const handleSearch = () => {
+    if (searchTimeout) {
+      clearTimeout(searchTimeout);
     }
+
+    if (searchType === SearchTypes.WatchList || searchInput.length <= 4) {
+      setResult([]);
+      return;
+    }
+
+    const newTimeout = setTimeout(async () => {
+      try {
+        const response = await axios.post(`${apiUrl}/search/${searchType}`, {
+          search: searchInput,
+        });
+
+        if (response.data && Array.isArray(response.data)) {
+          setResult(response.data);
+        }
+      } catch (error) {
+        console.error('Error searching:', error);
+      }
+    }, SEARCH_TIMEOUT);
+
+    setSearchTimeout(newTimeout);
   };
 
   const handleSearchWatchList = async () => {
@@ -101,13 +112,16 @@ export default function Home() {
           </div>
 
           {searchType === SearchTypes.WatchList && !searchBtnLoading ? (
-            <button className='btn btn-success' onClick={() => handleSearchWatchList()}>
+            <button
+              className='btn btn-success rounded-full'
+              onClick={() => handleSearchWatchList()}
+            >
               Search
             </button>
           ) : null}
 
           {searchType === SearchTypes.WatchList && searchBtnLoading ? (
-            <button className='btn btn-success'>
+            <button className='btn btn-success rounded-full'>
               <span className='loading loading-spinner'></span>
               loading
             </button>
