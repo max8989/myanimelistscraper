@@ -13,7 +13,7 @@ Check out the live version [here](https://wonderful-hill-03249770f.3.azurestatic
 
 1. **Clone the repo**:
     ```bash
-    git clone https://github.com/max8989/MyAnimeList-Scraper.git
+    git clone [https://github.com/max8989/MyAnimeList-Scraper.git](https://github.com/max8989/myanimelistscraper.git)
     ```
 
 2. **Install and run**:
