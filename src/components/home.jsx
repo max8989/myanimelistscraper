@@ -27,7 +27,7 @@ export default function Home() {
       clearTimeout(searchTimeout);
     }
 
-    if (searchType === SearchTypes.WatchList || searchInput.length <= 4) {
+    if (searchType === SearchTypes.WatchList || searchInput.length < 3) {
       setResult([]);
       return;
     }

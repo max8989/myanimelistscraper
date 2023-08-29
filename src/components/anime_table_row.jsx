@@ -1,6 +1,6 @@
 export function AnimeTableRow({ anime, idx }) {
   return (
-    <tr className='animate-fade-in'>
+    <tr className='animate-fade-in transition duration-300 hover:bg-opacity-10 hover:bg-gray-200 dark:hover:bg-gray-700'>
       <th>{idx + 1}</th>
       <th>
         <div className='flex items-center space-x-3'>
