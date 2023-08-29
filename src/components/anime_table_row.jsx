@@ -2,7 +2,7 @@ export function AnimeTableRow({ anime, idx }) {
   return (
     <tr>
       <th>{idx + 1}</th>
-      <td>
+      <th>
         <div className='flex items-center space-x-3'>
           <div className='avatar'>
             <div className='mask mask-squircle w-12 h-12'>
@@ -16,13 +16,13 @@ export function AnimeTableRow({ anime, idx }) {
             </div>
           </div>
         </div>
-      </td>
-      <td>
-        {anime.animeStudios.map((studio) => studio.name).join(', ')}
+      </th>
+      <th>
+        {anime.animeStudios?.map((studio) => studio?.name)?.join(', ')}
         <br />
         <span className='badge badge-ghost badge-sm'>{anime.animeMediaTypeString}</span>
-      </td>
-      <td>{anime.genres.map((genre) => genre.name).join(', ')}</td>
+      </th>
+      <th>{anime.genres?.map((genre) => genre?.name)?.join(', ')}</th>
       <th>
         <a
           href={`https://myanimelist.net${anime.animeUrl}`}

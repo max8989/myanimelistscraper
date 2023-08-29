@@ -4,7 +4,7 @@ import NavBar from './nav';
 export function Layout({ children }) {
   return (
     <div className='h-screen w-full'>
-      <div className='mx-10'>
+      <div className=''>
         <NavBar />
       </div>
       <Home />
