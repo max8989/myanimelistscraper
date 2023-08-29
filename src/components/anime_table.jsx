@@ -1,4 +1,4 @@
-import { AnimeTableRow } from './animeTableRow';
+import { AnimeTableRow } from './anime_table_row';
 
 export function AnimeTable({ data }) {
   return (

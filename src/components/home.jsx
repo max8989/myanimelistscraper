@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
-import AnimeCard from './animeCard';
-import { AnimeTable } from './animetable';
+import AnimeCard from './anime_card';
+import { AnimeTable } from './anime_table';
 
 const DEFAULT_USERNAME = 'centricmax';
 
