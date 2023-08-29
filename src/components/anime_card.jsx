@@ -1,6 +1,6 @@
 const AnimeCard = ({ anime }) => {
   return (
-    <div className='card lg:card-side bg-base-100 shadow-xl my-3'>
+    <div className='card lg:card-side bg-base-100 shadow-xl my-3 animate-fade-in'>
       <figure className='w-1/4'>
         <img src={anime.thumbnail} alt={anime.title} />
       </figure>
