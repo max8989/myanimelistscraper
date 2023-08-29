@@ -1,8 +1,32 @@
-# React + Vite
+# MyAnimeList Scraper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Scrape and analyze data from MyAnimeList for anime, manga, users, and more.
+Check out the live version [here](https://wonderful-hill-03249770f.3.azurestaticapps.net/).
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Scrape details for **anime**, **manga**, and **users**.
+- **Visualize data** through charts.
+- Get **anime and manga recommendations**.
+
+## 🛠 Setup
+
+1. **Clone the repo**:
+    ```bash
+    git clone https://github.com/max8989/MyAnimeList-Scraper.git
+    ```
+
+2. **Install and run**:
+    ```bash
+    cd MyAnimeList-Scraper
+    yarn install
+    yarn start
+    ```
+
+## 🤝 Contribute
+
+Open to contributions. Feel free to submit pull requests!
+
+## 📜 License
+
+MIT
