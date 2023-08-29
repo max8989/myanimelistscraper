@@ -107,7 +107,7 @@ export default function Home() {
           ) : null}
 
           {searchType === SearchTypes.WatchList && searchBtnLoading ? (
-            <button className='btn'>
+            <button className='btn btn-success'>
               <span className='loading loading-spinner'></span>
               loading
             </button>
