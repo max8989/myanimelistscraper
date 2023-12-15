@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import SignUp from './components/signup';
 import Post from './components/post';
-import useGetToken from './../hooks/useToken';
+import useGetToken from './hooks/useToken';
 
 function App() {
   //useGetToken('sb-danhdzqsjdgwuhsndizl-auth-token');
