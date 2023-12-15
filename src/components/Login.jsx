@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [authSession, setAuthSession] = useLocalStorage('sb-danhdzqsjdgwuhsndizl-auth-token', null);
+  const [authSession, setAuthSession] = useLocalStorage('supabaseUser', null);
 
   const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
   const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY;
@@ -45,7 +45,7 @@ export default function Login() {
       navigate('/');
       window.location.reload();
 
-      console.log(data ? data : error);
+      console.log(error);
     } catch (error) {
       console.error('Twitter login failed:', error);
     }
