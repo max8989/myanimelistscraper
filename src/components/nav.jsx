@@ -13,6 +13,8 @@ export default function NavBar() {
   async function handleSignOut() {
     const { error } = await supabase.auth.signOut();
     setAuthSession(null);
+    localStorage.removeItem('sb-danhdzqsjdgwuhsndizl-auth-token');
+    localStorage.removeItem('supabaseUser');
     window.location.reload();
 
     if (error) console.error(error);

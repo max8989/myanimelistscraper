@@ -23,7 +23,7 @@ function ChatBubble({ name, description, currentUser }) {
 
 export default function Post() {
   const [message, setMessage] = useState('');
-  const [authSession, setAuthSession] = useLocalStorage('sb-danhdzqsjdgwuhsndizl-auth-token', null);
+  const [authSession, setAuthSession] = useLocalStorage('supabaseUser', null);
   const [receivedMessages, setReceivedMessages] = useState([]);
 
   useEffect(() => {
@@ -95,11 +95,14 @@ export default function Post() {
           className='input input-bordered input-info w-full max-w-xs'
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') handleSend();
-          }}
         />
-        <button className='btn btn-active btn-primary' onClick={handleSend}>
+        <button
+          className='btn btn-active btn-primary'
+          onClick={handleSend}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') handleLogin();
+          }}
+        >
           Send
         </button>
       </div>

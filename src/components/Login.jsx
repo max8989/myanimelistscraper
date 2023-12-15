@@ -15,18 +15,6 @@ export default function Login() {
   const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
   const navigate = useNavigate();
 
-  const handleLoginWithGitHub = async () => {
-    try {
-      const { data, error } = await supabase.auth.signInWithOAuth({
-        provider: 'github',
-      });
-
-      console.log(data ? data : error);
-    } catch (error) {
-      console.error('Twitter login failed:', error);
-    }
-  };
-
   const handleLogin = async () => {
     try {
       const { data, error } = await supabase.auth.signInWithPassword({
