@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useLocalStorage } from 'usehooks-ts';
 
 export default function NavBar() {
-  const [authSession, setAuthSession] = useLocalStorage('supabaseUser', null);
+  const [authSession, setAuthSession] = useLocalStorage('sb-danhdzqsjdgwuhsndizl-auth-token', null);
 
   const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
   const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY;

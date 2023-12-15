@@ -8,7 +8,7 @@ export default function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
-  const [authSession, setAuthSession] = useLocalStorage('supabaseUser', null);
+  const [authSession, setAuthSession] = useLocalStorage('sb-danhdzqsjdgwuhsndizl-auth-token', null);
 
   const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
   const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY;

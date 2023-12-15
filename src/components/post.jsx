@@ -23,7 +23,7 @@ function ChatBubble({ name, description, currentUser }) {
 
 export default function Post() {
   const [message, setMessage] = useState('');
-  const [authSession, setAuthSession] = useLocalStorage('supabaseUser', null);
+  const [authSession, setAuthSession] = useLocalStorage('sb-danhdzqsjdgwuhsndizl-auth-token', null);
   const [receivedMessages, setReceivedMessages] = useState([]);
 
   useEffect(() => {

@@ -7,14 +7,25 @@ import { useNavigate } from 'react-router-dom';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [authSession, setAuthSession] = useLocalStorage('supabaseUser', null);
+  const [authSession, setAuthSession] = useLocalStorage('sb-danhdzqsjdgwuhsndizl-auth-token', null);
 
-  const SUPABASE_KEY =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRhbmhkenFzamRnd3Voc25kaXpsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI2MDgzMTEsImV4cCI6MjAxODE4NDMxMX0.Jg-n_LbgkBIy4nTemvhe205iIf1NErNwp-lTqTZUB4w';
-  const SUPABASE_URL = 'https://danhdzqsjdgwuhsndizl.supabase.co';
+  const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+  const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY;
 
   const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
   const navigate = useNavigate();
+
+  const handleLoginWithGitHub = async () => {
+    try {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'github',
+      });
+
+      console.log(data ? data : error);
+    } catch (error) {
+      console.error('Twitter login failed:', error);
+    }
+  };
 
   const handleLogin = async () => {
     try {
