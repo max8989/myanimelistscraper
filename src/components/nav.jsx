@@ -5,9 +5,8 @@ import { useLocalStorage } from 'usehooks-ts';
 export default function NavBar() {
   const [authSession, setAuthSession] = useLocalStorage('supabaseUser', null);
 
-  const SUPABASE_KEY =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRhbmhkenFzamRnd3Voc25kaXpsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI2MDgzMTEsImV4cCI6MjAxODE4NDMxMX0.Jg-n_LbgkBIy4nTemvhe205iIf1NErNwp-lTqTZUB4w';
-  const SUPABASE_URL = 'https://danhdzqsjdgwuhsndizl.supabase.co';
+  const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+  const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY;
 
   const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -44,7 +43,7 @@ export default function NavBar() {
             className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
           >
             <li>
-              <a>Item 1</a>
+              <Link to='/chat'>Chat</Link>
             </li>
             <li>
               <a>Parent</a>
@@ -69,7 +68,7 @@ export default function NavBar() {
       <div className='navbar-center hidden lg:flex'>
         <ul className='menu menu-horizontal px-1'>
           <li>
-            <a>Item 1</a>
+            <Link to='/chat'>Chat</Link>
           </li>
           <li>
             <details>

@@ -20,3 +20,14 @@
 .animate-fade-in {
   animation: fadeIn 0.5s ease-in forwards;
 }
+
+.chat-container {
+  height: 600px; /* Set the desired height */
+  overflow-y: scroll;
+}
+
+.chat-scroll {
+  padding: 10px; /* Add padding as needed */
+  max-height: 100%;
+  overflow-y: auto;
+}

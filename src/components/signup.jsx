@@ -10,9 +10,8 @@ export default function SignUp() {
   const [password2, setPassword2] = useState('');
   const [authSession, setAuthSession] = useLocalStorage('supabaseUser', null);
 
-  const SUPABASE_KEY =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRhbmhkenFzamRnd3Voc25kaXpsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI2MDgzMTEsImV4cCI6MjAxODE4NDMxMX0.Jg-n_LbgkBIy4nTemvhe205iIf1NErNwp-lTqTZUB4w';
-  const SUPABASE_URL = 'https://danhdzqsjdgwuhsndizl.supabase.co';
+  const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+  const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY;
 
   const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
   const navigate = useNavigate();
