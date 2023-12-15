@@ -1,4 +1,3 @@
-import Home from './home';
 import NavBar from './nav';
 
 export function Layout({ children }) {
@@ -7,7 +6,6 @@ export function Layout({ children }) {
       <div className=''>
         <NavBar />
       </div>
-      <Home />
       {children}
     </div>
   );
